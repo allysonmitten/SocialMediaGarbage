@@ -8,8 +8,8 @@ module.exports = function(app, passport) {
     });
 
     // PROFILE SECTION =========================
-    app.get('/profile', isLoggedIn, function(req, res) {
-        res.render('profile.ejs', {
+    app.get('/profileBrowse', isLoggedIn, function(req, res) {
+        res.render('profileBrowse.ejs', {
             user : req.user
         });
     });
@@ -46,7 +46,7 @@ module.exports = function(app, passport) {
 
         // process the signup form
         app.post('/signup', passport.authenticate('local-signup', {
-            successRedirect : '/browse', // redirect to the secure profile section
+            successRedirect : '/profileBrowse', // redirect to the secure profile section
             failureRedirect : '/signup', // redirect back to the signup page if there is an error
             failureFlash : true // allow flash messages
         }));
@@ -59,7 +59,7 @@ module.exports = function(app, passport) {
         // handle the callback after facebook has authenticated the user
         app.get('/auth/facebook/callback',
             passport.authenticate('facebook', {
-                successRedirect : '/browse',
+                successRedirect : '/profileBrowse',
                 failureRedirect : '/'
             }));
 
@@ -72,7 +72,7 @@ module.exports = function(app, passport) {
         // the callback after google has authenticated the user
         app.get('/auth/google/callback',
             passport.authenticate('google', {
-                successRedirect : '/browse',
+                successRedirect : '/profileBrowse',
                 failureRedirect : '/'
             }));
 
@@ -85,7 +85,7 @@ module.exports = function(app, passport) {
             res.render('connect-local.ejs', { message: req.flash('loginMessage') });
         });
         app.post('/connect/local', passport.authenticate('local-signup', {
-            successRedirect : '/browse', // redirect to the secure profile section
+            successRedirect : '/profileBrowse', // redirect to the secure profile section
             failureRedirect : '/connect/local', // redirect back to the signup page if there is an error
             failureFlash : true // allow flash messages
         }));
@@ -98,7 +98,7 @@ module.exports = function(app, passport) {
         // handle the callback after facebook has authorized the user
         app.get('/connect/facebook/callback',
             passport.authorize('facebook', {
-                successRedirect : '/browse',
+                successRedirect : '/profileBrowse',
                 failureRedirect : '/'
             }));
 
@@ -110,7 +110,7 @@ module.exports = function(app, passport) {
         // handle the callback after twitter has authorized the user
         app.get('/connect/twitter/callback',
             passport.authorize('twitter', {
-                successRedirect : '/browse',
+                successRedirect : '/profileBrowse',
                 failureRedirect : '/'
             }));
 
@@ -123,7 +123,7 @@ module.exports = function(app, passport) {
         // the callback after google has authorized the user
         app.get('/connect/google/callback',
             passport.authorize('google', {
-                successRedirect : '/browse',
+                successRedirect : '/profileBrowse',
                 failureRedirect : '/'
             }));
 
