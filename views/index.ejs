@@ -1,29 +1,59 @@
 <!doctype html>
 <html>
 <head>
-    <title>Node Authentication</title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <title>Home</title>
+     
+
+
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+
+    <link rel="stylesheet" href="/assets/css/style.css">
+
+    
+
+    
+
+     
+
+
+
+
+
+
+
+
+
+
+
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
+     </script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous">
+    </script>
     
 </head>
 <body>
-<nav class="navbar navbar-default navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-fixed-top">
 
     <div class="container-fluid">
 
         <div class="navbar-header">
 
-            <a class="navbar-brand" href="#"> <img  alt="Brand" src="static/images/logo.png" height="auto" width="80px"> </a>
+            <a class="navbar-brand" href="/"> <img  alt="Brand" src="static/images/logo.png" height="auto" width="80px"> </a>
         </div>
 
+        <a href="/browse" ><button type="button" class="btn bButton">Browse</button></a>
         <a href="#"><button type="button" class="btn rButton" data-toggle="modal" data-target="#register">Register</button></a>
         <a href="#" ><button type="button" class="btn sButton" data-toggle="modal" data-target="#signin">Sign in</button></a>
+
     </div>
 
 </nav>
 
-
 <div class="separator"></div>
+
+<h1>Home Page</h1>
 
 
 <div class="container">
@@ -121,7 +151,7 @@
                         <h4 class="modal-title">Login with:</h4>
                         <br>
                         <a href="/auth/facebook" class="btn btn-primary"><span class="fa fa-facebook"></span> Facebook</a>
-                        <a href="/auth/twitter" class="btn btn-info"><span class="fa fa-twitter"></span> Twitter</a>
+                        <a href="/auth/google" class="btn btn-danger"><span class="fa fa-google-plus"></span> Google+</a>
 
                     </div>
 
@@ -129,27 +159,12 @@
             </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
 
+<div class="container">
 
+    <h1><span class="fa fa-sign-in"></span> Home View</h1>
 
+</div>
+    
 
-
-
-
-    <!-- ORIGINAL CODE -->
-<!-- <div class="container">
-
-    <div class="jumbotron text-center">
-        <h1><span class="fa fa-lock"></span> Node Authentication</h1>
-
-        <p>Login or Register with:</p>
-
-        <a href="/login" class="btn btn-default"><span class="fa fa-user"></span> Login</a>
-        <a href="/signup" class="btn btn-default"><span class="fa fa-user"></span> Signup</a>
-        <a href="/auth/facebook" class="btn btn-primary"><span class="fa fa-facebook"></span> Facebook</a>
-        <a href="/auth/google" class="btn btn-danger"><span class="fa fa-google-plus"></span> Google+</a>
-    </div>
-
-
-</div> -->
 </body>
 </html>
