@@ -1,0 +1,10 @@
+/* ENABLING CUSTOM FONTS*/
+
+@font-face {
+    font-family: 'Seravek';
+    src:url('fonts/Seravek.ttc');
+}
+@font-face {
+    font-family: 'Candal';
+    src:url('fonts/Candal.ttf');
+}
