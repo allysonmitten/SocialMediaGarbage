@@ -1,0 +1,21 @@
+/* ENABLING CUSTOM FONTS*/
+
+@font-face {
+    font-family: 'Seravek';
+    src:url('fonts/Seravek.ttc');
+}
+@font-face {
+    font-family: 'Candal';
+    src:url('fonts/Candal.ttf');
+}
+body {
+	background-color: #f7f6f4;
+}
+.frontAd {
+
+}
+.frontAdLogo {
+	height: 400px;
+	width: 350px;
+	padding-top: 125px;
+}

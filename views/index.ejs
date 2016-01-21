@@ -1,46 +1,58 @@
 <!doctype html>
-<html>
+<html ng-app="hgtApp">
 <head>
-    <title>Home</title>
-     
+    <title>HGT</title>
 
-
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
-
+    <!-- load bootstrap css -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/0.4.9/toaster.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.1/css/material.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.1/css/ripples.css" /> 
+    <!-- load fontawesome css -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> 
+    <!-- load angular material min css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.2/angular-material.min.css">
+    <!-- load local css -->
     <link rel="stylesheet" href="/assets/css/style.css">
 
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
-     </script>
+    <!-- load jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous">
-    </script>
-    
+     <!-- load bootstrap javascript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script> 
+
+    <!-- load angular javascript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular.min.js"></script> 
+
+
+  
 </head>
+
 <body>
     <nav class="navbar navbar-default navbar-fixed-top">
 
-    <div class="container-fluid">
+        <div class="container-fluid">
 
-        <div class="navbar-header">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/"> <img  alt="Brand" src="assets/images/logo.png" height="auto" width="80px"> </a>
+            </div>
 
-            <a class="navbar-brand" href="/"> <img  alt="Brand" src="assets/images/logo.png" height="auto" width="80px"> </a>
+            <a href="/browse" ><button type="button" class="btn bButton">Browse</button></a>
+            <a href="#"><button type="button" class="btn rButton" data-toggle="modal" data-target="#register">Register</button></a>
+            <a href="#" ><button type="button" class="btn sButton" data-toggle="modal" data-target="#signin">Sign in</button></a>
         </div>
 
-        <a href="/browse" ><button type="button" class="btn bButton">Browse</button></a>
-        <a href="#"><button type="button" class="btn rButton" data-toggle="modal" data-target="#register">Register</button></a>
-        <a href="#" ><button type="button" class="btn sButton" data-toggle="modal" data-target="#signin">Sign in</button></a>
-
-    </div>
-
-</nav>
+    </nav>
 
 <div class="separator"></div>
-
+<div class="frontAd">
+    <div> 
+    <img class="frontAdLogo" src="../assets/Images/logo2.png"></img>
+</div>
 <h1>Home Page</h1>
 
-
 <div class="container">
+    
     <div class="row frontPageContent">
         <div class="modal fade" tabindex="-1" role="dialog" data-toggle="modal" data-target="#myModal" id="register">
             <div class="modal-dialog">
@@ -149,6 +161,7 @@
 
 </div>
     
+    <script src="../app/app.js"></script>
 
 </body>
 </html>
