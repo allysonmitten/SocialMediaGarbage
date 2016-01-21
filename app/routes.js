@@ -10,6 +10,10 @@ module.exports = function(app, passport) {
      app.get('/browse', function(req, res) {
         res.render('browse.ejs');
     });
+     
+     app.get('/post', function(req, res) {
+        res.render('post.ejs');
+    });
 
     // PROFILE SECTION =========================
     app.get('/profile', isLoggedIn, function(req, res) {

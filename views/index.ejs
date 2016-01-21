@@ -9,36 +9,66 @@
 
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular.min.js"></script>
+
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous">
     </script>   
 </head>
 
-<body>
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <body>
+        <div class="container">
+            <!--Navigation row -->
+            <div class="row top-buffer">
+            </div>
+            <div class="row">
+                <div class="col-md-5 col-md-offset-1">
+                    <h3 id="navLogo">HEAVY GARBAGE TINDER</h3>
+                </div>
+            </div>            
+            <div class="row">
+                <div class="col-md-1 col-md-offset-7" id="navLinks">
+                    <a href="/post">POST</a>
+                </div>
+                <div class="col-sm-1" id="navLinks">
+                    <a href="/browse">BROWSE</a>
+                </div>
+                <div class="col-sm-1" id="navLinks">
+                    <a href="#" data-toggle="modal" data-target="#register">LOGIN</a>    
+                </div> 
+            </div>
+        </div>
 
         <div class="container-fluid">
-
-            <div class="navbar-header">
-                <a class="navbar-brand" href="/"> <img  alt="Brand" src="assets/images/logo.png" height="auto" width="80px"> </a>
+            <div class="row" id="greenBanner">
+                <div class="col-md-6 indexText">
+                    <div class="row top-buffer"></div>
+                    <div class="row top-buffer">
+                        <center>
+                            <p>Bringing new meaning to picking up on Tinder</p>
+                        </center>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <img src="/assets/images/logo2.png" id="frontImg"></img>
+                </div>
             </div>
-
-            <a href="/browse" ><button type="button" class="btn bButton">Browse</button></a>
-            <a href="#"><button type="button" class="btn rButton" data-toggle="modal" data-target="#register">Register</button></a>
-            <a href="#" ><button type="button" class="btn sButton" data-toggle="modal" data-target="#signin">Sign in</button></a>
         </div>
+<<<<<<< HEAD
+        
+        </div>
+=======
 
     </nav>
 
 <div class="separator"></div>
 <div class="frontAd">
-    <div 
+    <div> 
     <img class="frontAdLogo" src="../assets/Images/logo2.png"></img>
 </div>
 <h1>Home Page</h1>
-
+>>>>>>> origin/master
 
 <div class="container">
-    
     <div class="row frontPageContent">
         <div class="modal fade" tabindex="-1" role="dialog" data-toggle="modal" data-target="#myModal" id="register">
             <div class="modal-dialog">
@@ -140,13 +170,13 @@
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
-
-<div class="container">
-
-    <h1><span class="fa fa-sign-in"></span> Home View</h1>
-
-</div>
-    
-
-</body>
+    </body>
 </html>
+
+
+
+
+
+
+
+

@@ -2,20 +2,62 @@
 
 @font-face {
     font-family: 'Seravek';
-    src:url('fonts/Seravek.ttc');
+    src:url('../fonts/Seravek.ttc');
 }
 @font-face {
     font-family: 'Candal';
-    src:url('fonts/Candal.ttf');
+    src:url('../fonts/Candal.ttf');
+}
+@font-face {
+    font-family: 'Gling';
+    src:url('../fonts/Gling.ttf');
 }
 body {
 	background-color: #f7f6f4;
 }
-.frontAd {
-
+p {
+	font-family: Gling;
+	font-size: 35px;
 }
-.frontAdLogo {
+.top-buffer { 
+	margin-top:20px; 
+}
+.indexText {
+	margin-left: 50px;
+	margin-top: 110px;
+	font-family: Gling;
+	color: #142c59;
+}
+#navLogo {
+	font-family: Candal;
+	color: #142c59;
+}
+#navLinks {
+	font-family: Seravek;
+	color: #142c59;
+}
+#backgroundBanner{
+	background-color: #deefde;
+	height: 60px;
+	width: 100%;
+}
+a {
+	text-decoration: none;
+	color: #142c59;
+}
+a:hover {
+	text-decoration: none;
+	color: #009d3a;
+	}
+#greenBanner {
+	margin-top: 20px;
+	background-color: #deefde;
 	height: 400px;
-	width: 350px;
-	padding-top: 125px;
+}
+#greenBannerSmall {
+	background-color: #deefde;
+}
+#frontImg {
+	height: 400px;
+	width: 400px;
 }
