@@ -50,9 +50,9 @@ a:hover {
 	color: #009d3a;
 	}
 #greenBanner {
-	margin-top: 20px;
+	margin-top: 75px;
 	background-color: #deefde;
-	height: 400px;
+	height: 250px;
 }
 #greenBannerSmall {
 	background-color: #deefde;
@@ -60,4 +60,5 @@ a:hover {
 #frontImg {
 	height: 400px;
 	width: 400px;
+	margin-top: -65px;
 }
