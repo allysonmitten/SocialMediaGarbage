@@ -1,3 +1,5 @@
+var Post = require('../app/models/posts');
+
 module.exports = function(app, passport) {
 
 // normal routes ===============================================================
@@ -10,6 +12,7 @@ module.exports = function(app, passport) {
      app.get('/browse', function(req, res) {
         res.render('browse.ejs');
     });
+
 
     // PROFILE SECTION =========================
     app.get('/profile', isLoggedIn, function(req, res) {
@@ -106,19 +109,6 @@ module.exports = function(app, passport) {
                 failureRedirect : '/'
             }));
 
-    // twitter --------------------------------
-
-        // send to twitter to do the authentication
-        app.get('/connect/twitter', passport.authorize('twitter', { scope : 'email' }));
-
-        // handle the callback after twitter has authorized the user
-        app.get('/connect/twitter/callback',
-            passport.authorize('twitter', {
-                successRedirect : '/browse',
-                failureRedirect : '/'
-            }));
-
-
     // google ---------------------------------
 
         // send to google to do the authentication
@@ -131,6 +121,33 @@ module.exports = function(app, passport) {
                 failureRedirect : '/'
             }));
 
+
+// POST ITEMS =============================================================
+// =============================================================================
+        app.get('/post/new', function(req, res) {
+        res.render('post.ejs');
+        });
+
+        app.post('/api/post', function(req, res) {
+
+            var newPost = new Post();
+            newPost._creator = req.session.user._id;
+            newPost.title = req.param('title');
+            newPost.hashtag = req.param('hashtag');
+            newPost.address = req.param('address');
+
+            newPost.save (function(err) {
+                        if (err)
+                        throw err;
+
+                    var returnJson = {};
+                    returnJson.status = "success";
+                    return res.json(returnJson);
+                        
+                            });
+
+
+        });
 // =============================================================================
 // UNLINK ACCOUNTS =============================================================
 // =============================================================================
@@ -174,5 +191,6 @@ function isLoggedIn(req, res, next) {
     if (req.isAuthenticated())
         return next();
 
+    console.log("not logged in");
     res.redirect('/');
 }

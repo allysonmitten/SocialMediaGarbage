@@ -15,6 +15,8 @@ var bodyParser   = require('body-parser');
 var session      = require('express-session');
 
 var configDB = require('./config/database.js');
+var createPost = require('./app/models/posts');
+var postSchema = require('./app/models/posts');
 
 // configuration ===============================================================
 mongoose.connect(configDB.url); // connect to our database
@@ -26,6 +28,7 @@ app.use(morgan('dev')); // log every request to the console
 app.use(cookieParser()); // read cookies (needed for auth)
 app.use(bodyParser()); // get information from html forms
 
+
 app.set('view engine', 'ejs'); // set up ejs for templating
 
 // required for passport
@@ -34,7 +37,8 @@ app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
 app.use("/assets", express.static(__dirname + '/assets'));
-
+app.use("/app", express.static(__dirname + '/app'));
+app.use("/node_modules", express.static(__dirname + '/node_modules'));
 // routes ======================================================================
 require('./app/routes.js')(app, passport); // load our routes and pass in our app and fully configured passport
 

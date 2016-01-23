@@ -56,8 +56,10 @@ module.exports = function(passport) {
                     return done(null, false, req.flash('loginMessage', 'Oops! Wrong password.'));
 
                 // all is well, return user
-                else
+                else {
+                    req.session.user = user;
                     return done(null, user);
+                }
             });
         });
 
@@ -112,6 +114,7 @@ module.exports = function(passport) {
                         if (err)
                             throw err;
 
+                        req.session.user = user;
                         return done(null, newUser);
                     });
                 }

@@ -23,20 +23,20 @@
     </script> 
 
     <!-- Angular -->
-    <script src="node_modules/angular/angular.js"></script>
+    <script src="/node_modules/angular/angular.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
 
 
   
 </head>
 
-<body>
+<body ng-controller='postController'>
     <nav class="navbar navbar-default navbar-fixed-top">
 
         <div class="container-fluid">
 
             <div class="navbar-header">
-                <a class="navbar-brand" href="/"> <img  alt="Brand" src="assets/images/logo.png" height="auto" width="80px"> </a>
+                <a class="navbar-brand" href="/"> <img  alt="Brand" src="/assets/images/logo.png" height="auto" width="80px"> </a>
             </div>
 
             <a href="/browse" ><button type="button" class="btn bButton">Browse</button></a>
@@ -48,11 +48,6 @@
     </nav>
 
 <div class="separator"></div>
-<div class="frontAd">
-    <div> 
-    <img class="frontAdLogo" src="../assets/Images/logo2.png"></img>
-</div>
-<h1>Home Page</h1>
 
 <div class="container">
     
@@ -160,14 +155,38 @@
 
 <div class="container">
 
-    <h1><span class="fa fa-sign-in"></span> Home View</h1>
+    <h1><span class="fa fa-sign-in"></span> Post View</h1>
 
-    <div ui-view></div>
+   <div class="row">
+	<div class="col-sm-6">
+		<div class="row">
+			<strong>Title</strong>
+			<input type="text" ng-model="newPost.title" class="form-control">
+		</div>
+
+		<div class="row">
+			<strong>Hashtag</strong>
+			<input type="text" ng-model="newPost.hashtag" class="form-control">
+		</div>
+
+		<div class="row">
+			<strong>Address</strong>
+			<input type="text" ng-model="newPost.address" class="form-control">
+		</div>
+
+		<button ng-click="createPost()">Submit</button>
+
+	</div>
+</div>
+
+
+
+
 
 </div>
     
-    <script src="../app/app.js"></script>
-    <script src="../app/controllers/postController.js"></script>
+    <script src="/assets/app.js"></script>
+    <script src="/assets/controllers/postController.js"></script>
 
 </body>
 </html>
