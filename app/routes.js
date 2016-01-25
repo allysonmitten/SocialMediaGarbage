@@ -1,4 +1,4 @@
-var Post = require('../app/models/posts');
+var Post = require('./models/posts.js');
 
 module.exports = function(app, passport) {
 
@@ -8,11 +8,6 @@ module.exports = function(app, passport) {
     app.get('/', function(req, res) {
         res.render('index.ejs');
     });
-
-     app.get('/browse', function(req, res) {
-        res.render('browse.ejs');
-    });
-
 
     // PROFILE SECTION =========================
     app.get('/profile', isLoggedIn, function(req, res) {
@@ -25,6 +20,15 @@ module.exports = function(app, passport) {
     app.get('/logout', function(req, res) {
         req.logout();
         res.redirect('/browse');
+    });
+
+     // LOGOUT ==============================
+    app.get('/browse', function(req, res) {
+        res.render('browse.ejs');
+    });
+
+     app.get('/nav', function(req, res) {
+        res.render('nav.ejs');
     });
 
 // =============================================================================
@@ -40,7 +44,7 @@ module.exports = function(app, passport) {
 
         // process the login form
         app.post('/login', passport.authenticate('local-login', {
-            successRedirect : '/browse', // redirect to the secure profile section
+            successRedirect : '/', // redirect to the secure profile section
             failureRedirect : '/login', // redirect back to the signup page if there is an error
             failureFlash : true // allow flash messages
         }));
@@ -53,7 +57,7 @@ module.exports = function(app, passport) {
 
         // process the signup form
         app.post('/signup', passport.authenticate('local-signup', {
-            successRedirect : '/browse', // redirect to the secure profile section
+            successRedirect : '/', // redirect to the secure profile section
             failureRedirect : '/signup', // redirect back to the signup page if there is an error
             failureFlash : true // allow flash messages
         }));
@@ -109,6 +113,19 @@ module.exports = function(app, passport) {
                 failureRedirect : '/'
             }));
 
+    // twitter --------------------------------
+
+        // send to twitter to do the authentication
+        app.get('/connect/twitter', passport.authorize('twitter', { scope : 'email' }));
+
+        // handle the callback after twitter has authorized the user
+        app.get('/connect/twitter/callback',
+            passport.authorize('twitter', {
+                successRedirect : '/browse',
+                failureRedirect : '/'
+            }));
+
+
     // google ---------------------------------
 
         // send to google to do the authentication
@@ -121,8 +138,7 @@ module.exports = function(app, passport) {
                 failureRedirect : '/'
             }));
 
-
-// POST ITEMS =============================================================
+        // POST ITEMS =============================================================
 // =============================================================================
         app.get('/post/new', function(req, res) {
         res.render('post.ejs');
@@ -148,6 +164,7 @@ module.exports = function(app, passport) {
 
 
         });
+
 // =============================================================================
 // UNLINK ACCOUNTS =============================================================
 // =============================================================================
@@ -191,6 +208,5 @@ function isLoggedIn(req, res, next) {
     if (req.isAuthenticated())
         return next();
 
-    console.log("not logged in");
     res.redirect('/');
 }

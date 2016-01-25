@@ -1,21 +1,121 @@
 /* ENABLING CUSTOM FONTS*/
-
+@font-face {
+    font-family: 'Iron';
+    src:url('../fonts/Iron.ttf');
+}
 @font-face {
     font-family: 'Seravek';
-    src:url('fonts/Seravek.ttc');
+    src:url('../fonts/Seravek.ttc');
 }
 @font-face {
     font-family: 'Candal';
-    src:url('fonts/Candal.ttf');
+    src:url('../fonts/Candal.ttf');
+}
+@font-face {
+    font-family: 'Gling';
+    src:url('../fonts/Gling.ttf');
+}
+@font-face {
+    font-family: 'SourceCode';
+    src:url('../fonts/SourceCode.otf');
 }
 body {
 	background-color: #f7f6f4;
 }
-.frontAd {
-
+p {
+	font-family: SourceCode;
+	font-size: 20px;
 }
-.frontAdLogo {
+.top-buffer { 
+	margin-top:20px; 
+}
+.indexText {
+	margin-left: 50px;
+	margin-top: 100px;
+	color: #142c59;
+}
+#navLogo {
+	font-family: Candal;
+	color: #142c59;
+}
+#navLinks {
+	font-family: Seravek;
+	color: #142c59;
+}
+#backgroundBanner{
+	background-color: #deefde;
+	height: 60px;
+	width: 100%;
+}
+a {
+	text-decoration: none;
+	color: #142c59;
+}
+a:hover {
+	text-decoration: none;
+	color: #009d3a;
+	}
+#greenBanner {
+	margin-top: 75px;
+	background-color: #deefde;
+	height: 250px;
+}
+#greenBannerSmall {
+	background-color: #deefde;
+}
+#frontImg {
 	height: 400px;
-	width: 350px;
-	padding-top: 125px;
+	width: 400px;
+	margin-top: -65px;
+}
+.modal-content {
+	background-color: #f7f6f4;
+	-webkit-border-radius: 10px !important;
+    -moz-border-radius: 10px !important;
+    border-radius: 10px !important; 
+    width: 350px;
+}
+.modal-title {
+	font-family: Iron;
+	font-size: 30px;
+}
+.modal-title2 {
+	font-family: Iron;
+	text-align: left;
+}
+input[type="email"] {
+  display: block;
+  margin: 0;
+  width: 100%;
+  font-family: sans-serif;
+  font-size: 18px;
+  box-shadow: none;
+  border-radius: none;
+  border: 1px solid #000000;
+  text-align: center;
+}
+
+input[type="password"] {
+  display: block;
+  margin: 0;
+  width: 100%;
+  font-family: sans-serif;
+  font-size: 18px;
+  box-shadow: none;
+  border-radius: none;
+  border: 1px solid #000000;
+  text-align: center;
+}
+#signInButton {
+	background-color: #009d3a !important;
+}
+.modalText {
+	margin-bottom: 10px;
+	text-align: left;
+}
+.registerText {
+	font-size: 15px;
+	font-family: Helvetica;
+	color: #142c59;
+	margin-top: 20px;
 }

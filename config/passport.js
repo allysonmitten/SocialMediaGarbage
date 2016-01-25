@@ -35,7 +35,7 @@ module.exports = function(passport) {
     // =========================================================================
     passport.use('local-login', new LocalStrategy({
         // by default, local strategy uses username and password, we will override with email
-        usernameField : 'email', 
+        usernameField : 'email',
         passwordField : 'password',
         passReqToCallback : true // allows us to pass in the req from our route (lets us check if a user is logged in or not)
     },
@@ -56,10 +56,8 @@ module.exports = function(passport) {
                     return done(null, false, req.flash('loginMessage', 'Oops! Wrong password.'));
 
                 // all is well, return user
-                else {
-                    req.session.user = user;
+                else
                     return done(null, user);
-                }
             });
         });
 
@@ -114,7 +112,6 @@ module.exports = function(passport) {
                         if (err)
                             throw err;
 
-                        req.session.user = user;
                         return done(null, newUser);
                     });
                 }

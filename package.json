@@ -1,8 +1,8 @@
 {
-  "name": "HGT",
+  "name": "node-authentication",
   "main": "server.js",
   "dependencies": {
-    "angular": "^1.5.0-rc.0",
+    "angular": "^1.5.0-rc.1",
     "bcrypt-nodejs": "latest",
     "body-parser": "~1.0.0",
     "connect-flash": "~0.1.1",
@@ -13,7 +13,6 @@
     "method-override": "~1.0.0",
     "mongoose": "~3.8.1",
     "morgan": "~1.0.0",
-    "ng-file-upload": "^11.2.0",
     "passport": "~0.1.17",
     "passport-facebook": "~1.0.2",
     "passport-google-oauth": "~0.1.5",

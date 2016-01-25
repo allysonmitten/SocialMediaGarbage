@@ -1,0 +1,70 @@
+<html ng-app="hgtApp">
+<body ng-controller="navController">
+        <div class="modal fade" tabindex="-1" role="dialog" data-toggle="modal" data-target="#myModal" id="signin">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <center>
+                                <h4 class="modal-title">Login</h4>
+                            </center>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <form action="/login" method="post">
+
+                                        <div class="row">
+                                            <div class="col-md-10 col-md-offset-1">
+                                                <div class="form-group">
+
+                                                    <input type="email" class="form-control" id="exampleInputEmail2" name="email" placeholder="  Email">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-10 col-md-offset-1">
+                                                <div class="form-group">
+                                                    <input type="password" class="form-control" id="exampleInputName2" name="password" placeholder="Password">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <center>
+                                                <button type="submit" class="btn btn-primary btn-lg btn-block" id="signInButton">Login</button>
+                                            </center>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="row">
+                                <h4 class="modal-title2">OR Login with:</h4>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <a href="/auth/facebook"><span class="fa fa-facebook-square"></span> Facebook</a>
+                                </div>
+                                <div class="col-md-6">
+                                    <a href="/auth/google"><span class="fa fa-google-plus-square"></span> Google+</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <p class="registerText">Not a member yet? Click <a href="#" data-toggle="modal" data-target="#register">here</a> to register!</p>
+                        </div>
+
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+
+
+
+
+        
+
+<script src="/assets/scripts/app.js"></script>
+          <script src="/assets/scripts/controllers/navController.js"></script>
+</body>  
+</html>          

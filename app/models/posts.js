@@ -8,4 +8,3 @@ var postSchema = mongoose.Schema({
 
 var Post  = mongoose.model('Post', postSchema);
 module.exports = Post;
-// var User = mongoose.model('User', userSchema);

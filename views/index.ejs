@@ -14,160 +14,36 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.2/angular-material.min.css">
     <!-- load local css -->
     <link rel="stylesheet" href="/assets/css/style.css">
-
     <!-- load jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-
-     <!-- load bootstrap javascript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous">
-    </script> 
-
-    <!-- Angular -->
-    <script src="node_modules/angular/angular.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
-
-
-  
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>   
 </head>
+       
+<body ng-controller="navController">
 
-<body>
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <div ng-include="'/views/nav.ejs'"></div>
 
+        <!--  CONTENT -->
         <div class="container-fluid">
-
-            <div class="navbar-header">
-                <a class="navbar-brand" href="/"> <img  alt="Brand" src="assets/images/logo.png" height="auto" width="80px"> </a>
+            <div class="row" id="greenBanner">
+                <div class="col-md-6 indexText">
+                    <div class="row top-buffer"></div>
+                    <div class="row top-buffer">
+                        <center>
+                            <p>Bringing new meaning to picking up on Tinder</p>
+                        </center>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <img src="/assets/images/logo2.png" id="frontImg"></img>
+                </div>
             </div>
-
-            <a href="/browse" ><button type="button" class="btn bButton">Browse</button></a>
-            <a href="/post" ><button type="button" class="btn bButton">Post</button></a>
-            <a href="#"><button type="button" class="btn rButton" data-toggle="modal" data-target="#register">Register</button></a>
-            <a href="#" ><button type="button" class="btn sButton" data-toggle="modal" data-target="#signin">Sign in</button></a>
         </div>
-
-    </nav>
-
-<div class="separator"></div>
-<div class="frontAd">
-    <div> 
-    <img class="frontAdLogo" src="../assets/Images/logo2.png"></img>
-</div>
-<h1>Home Page</h1>
-
-<div class="container">
     
-    <div class="row frontPageContent">
-        <div class="modal fade" tabindex="-1" role="dialog" data-toggle="modal" data-target="#myModal" id="register">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title">Register with an Email</h4>
-                    </div>
-                    <div class="modal-body">
-                        <!-- LOGIN FORM -->
-                        <form action="/signup" method="post">
-                            <div class="row">
-                                <div class="col-md-1"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></div>
-                                <div class="col-md-10">
-                                    <div class="form-group">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" id="exampleInputName2" name="name" placeholder="Name">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-1"><span class="glyphicon glyphicon-envelope registerIcon" aria-hidden="true" id="registerE"></span></div>
-                                <div class="col-md-10">
-                                    <div class="form-group">
-
-                                        <input type="email" class="form-control" id="exampleInputEmail2" name="email" placeholder="E-mail">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-1"><span class="glyphicon glyphicon-lock registerIcon" aria-hidden="true" id="lock"></span></div>
-
-                                <div class="col-md-10">
-                                    <div class="form-group">
-                                        <input type="password" class="form-control" id="exampleInputName2" name="password" placeholder="Password">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <button type="submit" class="btn btn-warning btn-lg btnSignUp">Signup</button>
-                        </form>
-                    </div>
-                    <div>
-
-                    </div>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
-
-        <div class="modal fade" tabindex="-1" role="dialog" data-toggle="modal" data-target="#myModal" id="signin">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title">Login</h4>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <form action="/login" method="post">
-
-                                    <div class="row">
-                                        <div class="col-md-1"><span class="glyphicon glyphicon-envelope registerIcon " aria-hidden="true" id="registerE"></span></div>
-                                        <div class="col-md-10">
-                                            <div class="form-group">
-
-                                                <input type="email" class="form-control" id="exampleInputEmail2" name="email" placeholder="E-mail">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-md-1"><span class="glyphicon glyphicon-lock registerIcon" aria-hidden="true" id="lock"></span></div>
-
-                                        <div class="col-md-10">
-                                            <div class="form-group">
-                                                <input type="password" class="form-control" id="exampleInputName2" name="password" placeholder="Password">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <button type="submit" class="btn btn-warning btn-lg btnSignUp">Login</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-
-                        <h4 class="modal-title">Login with:</h4>
-                        <br>
-                        <a href="/auth/facebook" class="btn btn-primary"><span class="fa fa-facebook"></span> Facebook</a>
-                        <a href="/auth/google" class="btn btn-danger"><span class="fa fa-google-plus"></span> Google+</a>
-
-                    </div>
-
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
-
-<div class="container">
-
-    <h1><span class="fa fa-sign-in"></span> Home View</h1>
-
-    <div ui-view></div>
-
-</div>
-    
-    <script src="../app/app.js"></script>
-    <script src="../app/controllers/postController.js"></script>
-
-</body>
+          <script src="/assets/scripts/app.js"></script>
+          <script src="/assets/scripts/controllers/navController.js"></script>
+<%- include logModal.ejs %>
+<%- include signModal.ejs %>
+    </body>
 </html>
