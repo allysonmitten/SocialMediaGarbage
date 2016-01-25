@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var postSchema = mongoose.Schema({
-  _creator : { type: String, ref: 'User' },
+  // _creator : { type: String, ref: 'User' },
   title    : String,
   hashtag  : String,
   address  : String,
