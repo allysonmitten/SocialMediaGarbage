@@ -1,5 +1,8 @@
 /* ENABLING CUSTOM FONTS*/
-
+@font-face {
+    font-family: 'Iron';
+    src:url('../fonts/Iron.ttf');
+}
 @font-face {
     font-family: 'Seravek';
     src:url('../fonts/Seravek.ttc');
@@ -16,7 +19,7 @@ body {
 	background-color: #f7f6f4;
 }
 p {
-	font-family: Gling;
+	font-family: Iron;
 	font-size: 35px;
 }
 .top-buffer { 
@@ -24,8 +27,7 @@ p {
 }
 .indexText {
 	margin-left: 50px;
-	margin-top: 110px;
-	font-family: Gling;
+	margin-top: 100px;
 	color: #142c59;
 }
 #navLogo {
@@ -61,4 +63,40 @@ a:hover {
 	height: 400px;
 	width: 400px;
 	margin-top: -65px;
+}
+.modal-content {
+	background-color: #f7f6f4;
+	-webkit-border-radius: 10px !important;
+    -moz-border-radius: 10px !important;
+    border-radius: 10px !important; 
+    width: 350px;
+}
+.modal-title {
+	font-family: Iron;
+}
+input[type="email"] {
+  display: block;
+  margin: 0;
+  width: 100%;
+  font-family: sans-serif;
+  font-size: 18px;
+  box-shadow: none;
+  border-radius: none;
+  border: 1px solid #000000;
+  text-align: center;
+}
+
+input[type="password"] {
+  display: block;
+  margin: 0;
+  width: 100%;
+  font-family: sans-serif;
+  font-size: 18px;
+  box-shadow: none;
+  border-radius: none;
+  border: 1px solid #000000;
+  text-align: center;
+}
+#signInButton {
+	background-color: #009d3a !important;
 }

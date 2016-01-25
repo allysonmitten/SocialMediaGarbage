@@ -1,0 +1,36 @@
+<div class="container">
+        <div class="row frontPageContent">
+            <div class="modal fade" tabindex="-1" role="dialog" data-toggle="modal" data-target="#myModal" id="signin">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        	<a href="/auth/facebook" class="btn btn-primary"><span class="fa fa-facebook"></span> Facebook</a>
+                            <a href="/auth/google" class="btn btn-danger"><span class="fa fa-google-plus"></span> Google+</a>
+                            <h4>OR</h4>
+                        </div>
+
+                        <div class="modal-body">
+                            <form action="/signin" method="post">
+                                <div class="row">
+                                    <div class="col-md-10 col-md-offset-1">
+                                        <div class="form-group">
+                                            <div class="form-group">
+                                                <input type="email" class="form-control" id="exampleInputEmail2" name="email" placeholder="Email">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-10 col-md-offset-1">
+                                        <div class="form-group">
+                                        	<div class="form-group">
+                                            	<input type="password" class="form-control" id="exampleInputName2" name="password" placeholder="Password">
+                                        	</div>
+                                    	</div>
+                                	</div>
+                            	</div>
+                                <button type="submit">Signup</button>
+                            </form>
+                        </div>
