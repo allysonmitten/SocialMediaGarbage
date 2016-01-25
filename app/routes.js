@@ -147,7 +147,7 @@ module.exports = function(app, passport) {
         app.post('/api/post', function(req, res) {
 
             var newPost = new Post();
-            newPost._creator = req.session.user._id;
+            // newPost._creator = req.session.user._id;
             newPost.title = req.param('title');
             newPost.hashtag = req.param('hashtag');
             newPost.address = req.param('address');
