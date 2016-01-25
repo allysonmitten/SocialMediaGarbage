@@ -15,12 +15,16 @@
     font-family: 'Gling';
     src:url('../fonts/Gling.ttf');
 }
+@font-face {
+    font-family: 'SourceCode';
+    src:url('../fonts/SourceCode.otf');
+}
 body {
 	background-color: #f7f6f4;
 }
 p {
-	font-family: Iron;
-	font-size: 35px;
+	font-family: SourceCode;
+	font-size: 20px;
 }
 .top-buffer { 
 	margin-top:20px; 
@@ -73,6 +77,11 @@ a:hover {
 }
 .modal-title {
 	font-family: Iron;
+	font-size: 30px;
+}
+.modal-title2 {
+	font-family: Iron;
+	text-align: left;
 }
 input[type="email"] {
   display: block;
@@ -99,4 +108,14 @@ input[type="password"] {
 }
 #signInButton {
 	background-color: #009d3a !important;
+}
+.modalText {
+	margin-bottom: 10px;
+	text-align: left;
+}
+.registerText {
+	font-size: 15px;
+	font-family: Helvetica;
+	color: #142c59;
+	margin-top: 20px;
 }
