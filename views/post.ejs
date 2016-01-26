@@ -18,6 +18,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <!-- file upload -->
+    <script src="/node_modules/ng-file-upload/dist/ng-file-upload-shim.min.js"></script> <!-- for no html5 browsers support -->
+    <script src="/node_modules/ng-file-upload/dist/ng-file-upload.min.js"></script>
   
 </head>
 
@@ -31,20 +35,26 @@
 
    <div class="row">
 	<div class="col-sm-6">
-		<div class="row">
+		<div class="form-group">
 			<strong>Title</strong>
 			<input type="text" ng-model="newPost.title" class="form-control">
 		</div>
 
-		<div class="row">
+		<div class="form-group">
 			<strong>Hashtag</strong>
 			<input type="text" ng-model="newPost.hashtag" class="form-control">
 		</div>
 
-		<div class="row">
+		<div class="form-group">
 			<strong>Address</strong>
 			<input type="text" ng-model="newPost.address" class="form-control">
 		</div>
+
+        <div class="form-group">
+            <strong>Photo</strong>
+            <input type="file" file-model="newPost.file">
+        </div>
+
 
 		<button ng-click="createPost()">Submit</button>
 
@@ -54,8 +64,14 @@
 </div>
     
     <script src="/assets/scripts/app.js"></script>
-    <script src="/assets/scripts/controllers/postController.js"></script>
-    <script src="/assets/scripts/controllers/navController.js"></script>
+    <script src="/assets/scripts/controllers/navController.js">
+    <script src="/assets/scripts/controllers/postController.js">
+    </script>
+    <script src="/assets/scripts/services/multipartForm.js">
+    </script>
+    <script src="/assets/scripts/directives/fileModel.js">
+    </script>
+
 <%- include logModal.ejs %>
 <%- include signModal.ejs %>
 </body>
