@@ -1,19 +1,34 @@
 <div class="container" ng-controller="navController">
+    <% if (user != undefined && user.local.email != "") { %>
+    <div ng-init="isLoggedIn = true">
+    <% } else { %>
+    <div ng-init="isLoggedIn = false">
+    <% } %>
+
     <div class="row top-buffer"> </div>
     <div class="row">
         <div class="col-md-5 col-md-offset-1">
-            <h3 id="navLogo">HEAVY GARBAGE TINDER</h3>
+            <a href="/"><h3 id="navLogo">HEAVY GARBAGE TINDER</h3></a>
         </div>
     </div>            
     <div class="row">
-        <div class="col-md-1 col-md-offset-7" id="navLinks">
+        <div class="col-md-1 col-md-offset-7" id="navLinks" ng-show="isLoggedIn">
             <a href="/post/new">POST</a>
+        </div>
+        <div class="col-md-1 col-md-offset-7" id="navLinks" ng-hide="isLoggedIn">
+            <a href="#" data-toggle="modal" data-target="#signin">POST</a>
         </div>
         <div class="col-sm-1" id="navLinks">
             <a href="/browse">BROWSE</a>
         </div>
-        <div class="col-sm-1" id="navLinks">
+        <div class="col-sm-1" id="navLinks" ng-hide="isLoggedIn">
             <a href="#" data-toggle="modal" data-target="#signin">LOGIN</a>    
         </div> 
+        <div class="col-sm-1" id="navLinks" ng-show="isLoggedIn">
+            <a href="/logout">LOGOUT</a>    
+        </div> 
+        </div> 
+         
+
     </div>
 </div>

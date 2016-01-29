@@ -1,1 +1,1 @@
-    angular.module('hgtApp', []);
+	angular.module('hgtApp', []);

@@ -19,20 +19,41 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script> 
 
     
-</head ng-controller='navController'>
+</head>
 <body>
-    <div ng-include="'/views/nav.ejs'"></div>
+    <%- include nav.ejs %>
 
-<div class="container">
+<div class="container" ng-controller='browseController'>
 
-    <div class="jumbotron text-center">
-        <h1><span class="fa fa-lock"></span> Browse View</h1>
+    <div>
+        <h1>Browse View</h1>
+    </div>
+
+    <div class="row" ng-init="loadPosts()">
+
+        <div ng-repeat="post in posts">
+
+            <div class="panel panel-success">
+              <div class="panel-heading"><strong>Title:</strong> {{post.title}}</div>
+
+              <div class="panel-body">
+                <span class="glyphicon glyphicon-tags"></span> <strong>Tags:</strong> {{post.hashtag}}
+              </div>
+
+              <div class="panel-body">
+                <strong>Address:</strong> {{post.address}}
+              </div>
+            </div>
+
+        </div>
 
     </div>
+                
 </div>
 
   <script src="../assets/scripts/app.js"></script>
-  <script src="../assets//scripts/controllers/navController.js"></script>
+  <script src="../assets/scripts/controllers/browseController.js"></script>
+  <script src="../assets/scripts/controllers/navController.js"></script>
   <%- include logModal.ejs %>
 <%- include signModal.ejs %>
 
