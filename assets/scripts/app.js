@@ -1,1 +1,1 @@
-var hgtApp = angular.module('hgtApp', []);
+	angular.module('hgtApp', []);

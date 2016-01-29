@@ -1,12 +1,13 @@
 var Post = require('./models/posts.js');
-
 module.exports = function(app, passport) {
 
 // normal routes ===============================================================
 
     // show the home page (will also have our login links)
     app.get('/', function(req, res) {
-        res.render('index.ejs');
+        res.render('index.ejs', {
+            user : req.user
+        });
     });
 
     // PROFILE SECTION =========================
@@ -22,14 +23,23 @@ module.exports = function(app, passport) {
         res.redirect('/browse');
     });
 
-     // LOGOUT ==============================
     app.get('/browse', function(req, res) {
-        res.render('browse.ejs');
-    });
+        res.render('browse.ejs', {
+            user : req.user
+        });
+        });
+
+    app.get('/post/new', function(req, res) {
+        res.render('post.ejs', {
+            user : req.user
+        });
+        });
 
      app.get('/nav', function(req, res) {
         res.render('nav.ejs');
+        user : req.user
     });
+
 
 // =============================================================================
 // AUTHENTICATE (FIRST LOGIN) ==================================================
@@ -44,7 +54,7 @@ module.exports = function(app, passport) {
 
         // process the login form
         app.post('/login', passport.authenticate('local-login', {
-            successRedirect : '/', // redirect to the secure profile section
+            successRedirect : '/browse', // redirect to the secure profile section
             failureRedirect : '/login', // redirect back to the signup page if there is an error
             failureFlash : true // allow flash messages
         }));
@@ -57,7 +67,7 @@ module.exports = function(app, passport) {
 
         // process the signup form
         app.post('/signup', passport.authenticate('local-signup', {
-            successRedirect : '/', // redirect to the secure profile section
+            successRedirect : '/browse', // redirect to the secure profile section
             failureRedirect : '/signup', // redirect back to the signup page if there is an error
             failureFlash : true // allow flash messages
         }));
@@ -146,30 +156,29 @@ module.exports = function(app, passport) {
 
         app.post('/api/post', function(req, res) {
 
-                console.log(req.body);
-                console.log(req.files);
-                res.json({success: true});
-            });
+            var newPost = new Post();
+            // newPost._creator = req.session.user._id;
+            newPost.title = req.param('title');
+            newPost.hashtag = req.param('hashtag');
+            newPost.address = req.param('address');
 
-            // var newPost = new Post();
-            // // newPost._creator = req.session.user._id;
-            // newPost.title = req.param('title');
-            // newPost.hashtag = req.param('hashtag');
-            // newPost.address = req.param('address');
+            newPost.save (function(err) {
+                        if (err)
+                        throw err;
 
-            // newPost.save (function(err) {
-            //             if (err)
-            //             throw err;
-
-            //         var returnJson = {};
-            //         returnJson.status = "success";
-            //         return res.json(returnJson);
+                    var returnJson = {};
+                    returnJson.status = "success";
+                    return res.json(returnJson);
                         
-            //                 });
+                            });
 
+                });
 
-        // });
-
+        app.get('/api/post', function(req, res) {
+            Post.find({}, function(err, posts){
+                return res.json(posts);
+            })
+        })
 // =============================================================================
 // UNLINK ACCOUNTS =============================================================
 // =============================================================================

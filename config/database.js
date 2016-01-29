@@ -1,5 +1,5 @@
 module.exports = {
 
-    'url' : 'mongodb://root@localhost:27017/hgtSocial'
+    'url' : 'mongodb://root@localhost:27017/socialGarbage'
 
 };

@@ -4,6 +4,7 @@ var postSchema = mongoose.Schema({
   title    : String,
   hashtag  : String,
   address  : String,
+  photo    : String,
 });
 
 var Post  = mongoose.model('Post', postSchema);

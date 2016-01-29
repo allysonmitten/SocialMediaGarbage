@@ -13,7 +13,7 @@ var morgan       = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser   = require('body-parser');
 var multer       = require('multer');
-var upload = multer({ dest: 'uploads/' });
+var upload = multer({ dest: './uploads/' });
 var session      = require('express-session');
 
 var configDB = require('./config/database.js');
@@ -27,6 +27,12 @@ require('./config/passport')(passport); // pass passport for configuration
 app.use(morgan('dev')); // log every request to the console
 app.use(cookieParser()); // read cookies (needed for auth)
 app.use(bodyParser()); // get information from html forms
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+// parse application/json
+app.use(bodyParser.json())
+app.use(bodyParser.json({ type: 'application/vnd.api+json' }))
+ 
 
 app.set('view engine', 'ejs'); // set up ejs for templating
 
@@ -38,6 +44,7 @@ app.use(flash()); // use connect-flash for flash messages stored in session
 app.use('/assets', express.static(__dirname + '/assets'));
 app.use('/node_modules', express.static(__dirname + '/node_modules'));
 app.use('/views', express.static(__dirname + '/views'));
+
 
 // routes ======================================================================
 require('./app/routes.js')(app, passport); // load our routes and pass in our app and fully configured passport
