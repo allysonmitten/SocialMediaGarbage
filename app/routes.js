@@ -154,7 +154,7 @@ module.exports = function(app, passport) {
         res.render('post.ejs');
         });
 
-        app.post('/api/post', function(req, res) {
+        app.post('/api/post', isApiLoggedIn, function(req, res) {
 
             var newPost = new Post();
             // newPost._creator = req.session.user._id;
@@ -224,3 +224,14 @@ function isLoggedIn(req, res, next) {
 
     res.redirect('/');
 }
+
+function isApiLoggedIn(req, res, next) {
+ 
+     // if user is authenticated in the session, carry on 
+     if (req.isAuthenticated())
+         return next();
+ 
+     // if they aren't redirect them to the home page
+     res.redirect('/login');
+     
+ }
